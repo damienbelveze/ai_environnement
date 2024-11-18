@@ -1,0 +1,22 @@
+	<div id="ai_consommation"></div>
+	<script>
+	  (function() {
+		let h5pContainer = document.getElementById("ai_consommation"); // div tag ID
+		let h5pJsonPath = 'H5P/ai_consommation'; // H5P data directory path
+		
+		if (!document.getElementById('h5p-bundle-js')) {
+		  let script = document.createElement('script');
+		  script.id = 'h5p-bundle-js';
+		  script.src = 'libs/h5p/main.bundle.js';
+		  h5pContainer.parentNode.insertBefore(script, h5pContainer.nextSibling);
+		}
+
+		window.addEventListener("load", function() {
+		  const options = {
+			h5pJsonPath: h5pJsonPath,
+			frameJs: 'libs/h5p/frame.bundle.js',
+			frameCss: 'libs/h5p/styles/h5p.css',
+		  }
+		  new H5PStandalone.H5P(h5pContainer, options);
+		});
+	  }) ();
