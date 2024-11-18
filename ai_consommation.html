@@ -1,3 +1,5 @@
+**Scroller pour accéder au bouton "vérifier"**
+
 <div id="ai_consommation"></div>
 	<script>
 	  (function() {
@@ -16,7 +18,14 @@
 			h5pJsonPath: h5pJsonPath,
 			frameJs: 'libs/h5p/frame.bundle.js',
 			frameCss: 'libs/h5p/styles/h5p.css',
-		  }
+			frame: true,
+        	export: true,
+        	icon: true,
+        	downloadUrl: 'H5P/ai_consommation.h5p',
+        	fullScreen: true, 
+        	embed: true,
+        	embedCode:'<iframe width=":w" height=":h" src="https://damienbelveze.github.io/jeu de cartes/ai_environnement.html" frameBorder="0" scrolling="no" styles="width:100%"></iframe>',
+		  	}
 		  new H5PStandalone.H5P(h5pContainer, options);
 		});
 	  }) ();
